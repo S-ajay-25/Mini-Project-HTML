@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML_CSS_JS_Intro_Exercise</title>
+        <style>
+            table{
+                width: 88%;
+                background:rgb(124,154,167);
+                margin: 40px auto;
+            }
+            table .list{
+                text-align: center;
+                width: 100%;
+            }
+            td{
+                border: 1px solid black;
+                text-align:left;
+                padding:8px 15px
+            }
+            input[type = 'text'],input[type = 'number']{
+                display: flex;
+                flex-direction: column;
+                width: 91%;
+                padding: 5px 10px;
+                /* display: inline-block */
+                margin: 5px 0;
+                border:1px solid rgb(165,161,161);
+                border-radius: 5px;
+            }
+            .btn .submit{
+                display: inline-block;
+                border-radius: 6px;
+                border:1px solid black;
+                cursor: pointer;
+            }
+            .btn .submit:hover{
+                background: #4b99d8;
+            }
+            .btn .update{
+                display: none;
+                border-radius: 6px;
+                border:1px solid black;
+                cursor: pointer;
+            }
+            .btn .update:hover{
+                background: #4b99d8;
+            }
+        </style>
+        <body>
+        
+            <table>
+                <tr>
+                  <td>
+                    <form autocomplete = "off" onsubmit = "onFormSubmit()">
+                        <div>
+                          <label for = "First Name">First Name:</label>
+                          <input type = "text" name = "first name" id = 'fname' placeholder="Enter Your First Name" required maxlength=32>
+                        </div>
+                        <div>
+                           <label for = "Last Name">Last Name:</label>
+                          <input type = "text" name = "last name" id = 'lname' placeholder="Enter Your Last Name" required maxlength=32>
+                        </div>
+                        <div>
+                           <label for = "age"> Age:</label>
+                          <input type = "number" name = "age" id = 'age' placeholder="Enter Your Age" required>
+                        </div>
+                        <div class = "btn">
+                        <button type="button" class="submit">Add</button>
+                        <button type="button" class="update">Update</button>
+                          
+                        </div>
+                      </form>
+                      <td>
+                      <table class = "list" id = "storelist">
+                        <thead>
+                          <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Age</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                    </td>
+              </td>
+            </tr>
+          </table>
+          <script>
+            const form = document.querySelector("form");
+            const submit = document.querySelector(".submit");
+            const update = document.querySelector(".update");
+          </script>
+    </body>
+</html>

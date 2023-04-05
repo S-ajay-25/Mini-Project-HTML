@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            function validateform() {
+                let x =document.forms[myform][fname].values;
+                if(x == ''){
+                    document.getElementById("demo").innerHTML 
+                }
+            }       
+        </script>
+        <h2>JavaScript Validation</h2>
+        <p id ="demo"></p>
+        <form name="myform" action="/action_page.php" onsubmit="return validateform()" method="post">
+            Name :<input type = "text" name="fname">
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>

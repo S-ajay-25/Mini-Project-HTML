@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <!-- <h1>JavaScript HTML Events</h1> -->
+        <h2>JavaScript Onchange Event</h2>
+        Enter your name: <input type ="text" id = "fname" onchange = "UpperCase()">
+        <p>When you leave the input field, a function is triggered which transforms the input text to upper case.</p>
+        <!-- //<p>Click "Try it" to execute the displayDate() function.</p> -->
+        <!-- <button id="btn">Click me</button>
+        <p id="demo"></p> -->
+        <!-- <h1 id="demo"></h1> -->
+        <!-- <h2 onclick="document.getElementById('demo').innerHTML = 'Ooops Events'">Click on this Event</h2> -->
+        <!-- <p>Click the button to display the date</p>
+        <p id="demo"></p>
+        <button  onclick = "displayDate()">Click me</button>
+        <script>
+            function displayDate(){
+                document.getElementById("demo").innerHTML = Date();
+            } -->
+
+<!-- //Events using HTML DOM -->
+                    <script>
+                // document.getElementById("btn").onclick= display;
+                // function display(){
+                // document.getElementById("demo").innerHTML = Date();
+                // }
+
+//Onchange Event
+//<h2>JavaScript Onchange Event</h2>
+// Enter your name: <input type ="text" id = "fname" onchange = "UppperCase()">
+function UpperCase() {
+    const x = document.getElementById("fname")
+    x.value  = x.value.toUpperCase();
+}
+
+        </script>
+    </body>
+</html>

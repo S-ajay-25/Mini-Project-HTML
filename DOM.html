@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>This is an head tag</head>
+    <body>
+        <!-- <div id = "main">
+        <p>Finding HTML Elements by Id</p>
+        <p>This example demonstrates the <b>getElementsById</b> method.</p>
+    </div>
+        <p id = "demo"></p> -->
+
+        <h2>JavaScript HTML DOM</h2>
+
+<p>Finding HTML Elements by Class Name.</p>
+<p id = "p1">Hello World!</p>
+<p class="intro">This example demonstrates the <b>getElementsByClassName</b> method.</p>
+<p id="demo"></p>
+<h1 id="id01">Old Heading</h1>
+        <script>
+//Element by Id
+           // const elemnet = document.getElementById = "intro"
+          // document.getElementById("demo").innerHTML = "This text is from paragraph is : " +element.innerHTML;
+//Element by TagName
+         // const element2 = document.getElementsByTagName("p");
+         // document.getElementById("demo").innerHTML = "The first paragraph (index 0) inside  is: " + element2[0].innerHTML;
+//using getElementbyId and getElementsbyTagName
+         // const x = document.getElementById("main");
+         // const y = x.getElementsByTagName("p");
+         // document.getElementById("demo").innerHTML = 'The first paragraph (index 0) inside "main" is: ' + y[0].innerHTML;
+
+//Element by ClassName
+        // const x = document.getElementsByClassName("intro");
+        // document.getElementById("demo").innerHTML = 'The first paragraph (index 0) with class="intro" is: ' + x[0].innerHTML
+
+//Element by css selector
+        // const x = document.querySelectorAll("p.intro");
+        // document.getElementById("demo").innerHTML = "This first paragraph (index 0) with class = intro " + x[0].innerHTML
+        // document.body.style.background = 'red';
+        // setTimeout(()=>document.body.style.background = '',3000);
+
+//Changing HTML Content
+        
+        //document.getElementById("p1").innerHTML = "Next Text !!!"
+        const x = document.getElementById("id01")
+        x.style.background = 'red';
+        x.innerHTML = "New Heading"
+
+        </script>
+        <p>JavaScript changed "Old Heading" to "New Heading".</p>
+    </body>
+</html>

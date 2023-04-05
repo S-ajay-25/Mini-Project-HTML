@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>JavaScript Functions</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Rerum quo facere ipsum voluptatum porro nemo culpa blanditiis ab magnam aliquid. 
+        Dolores atque mollitia delectus. Vitae sed eaque maxime inventore rerum.</p>
+        <p id = "demo"></p>
+        <script>
+            let x = myfunction(4,3);
+            document.getElementById("demo").innerHTML = x;
+            function myfunction(a,b){
+                return a * b;
+            }
+            //Arrow Function
+            let sum = (a,b) => a +b;
+            document.getElementById("demo").innerHTML = sum(1,8);
+
+            //what if their is no arguments,paranthese are empty but they must be present
+            // let sayHi = () => alert("Hello");
+            // sayHi()
+// let user = {
+//     name : "JavaScript",
+//     dob  : 1995
+// };
+// let key = prompt("What do you want to know about the user? ","name");
+// alert(user[key]);
+
+// const car = {type:"Fiat",Model:"500",color:"White"};
+// 			document.getElementById("demo").innerHTML = "The car type is" + car.type;
+
+// const car = {type:"BMW",Model:"BFS",color:"Black",No_of_wheels:4}
+// document.getElementById("demo").innerHTML = car.type + " is my " + car.color + " car";
+// let user = {age:23};
+// let key = "age"
+// alert(key in user);
+// function user(name,age){
+//   return {
+//     name:name,
+//     age:age,
+//   };
+// }
+// let k = user("JavaScript",1995)
+// document.getElementById("demo").innerHTML = k.name 
+// // document.getElementById("demo").innerHTML = "age" in user
+// for (let key in user) {
+// //   document.getElementById("demo").innerHTML = key
+
+// alert(key);
+// }
+
+// let a = {}; //Empty object
+// let b = {};
+// alert(a == b);
+
+//object assign
+// let user = {name:"Jhon",age:23}
+// let permission1 = {canView : true}
+// let permission2 = {canEdit: true}
+// Object.assign(user,permission1,permission2);
+// alert(user.name)
+// alert(user.canView)
+// alert(user.canEdit)
+
+//Clone
+// let user = {
+//   name: "John",
+//   age: 30
+// };
+
+// let clone = {}; // the new empty object
+
+// // let's copy all user properties into it
+// for (let key in user) {
+//   clone[key] = user[key];
+// }
+// clone.name = "peter"
+// alert(user.name)
+
+
+//We also can use Object.assign to perform a simple object cloning
+// let user = {name :"jhon",age:23}
+// let clone = Object.assign({},user)
+// alert(clone.name)
+// alert(clone.age)
+
+//Nested Cloning
+// let user = {
+//   name:"Jhon",
+//   age:23,
+//   Size:
+//   {
+//     height:153,
+//     weight:76
+//   }
+// };
+// alert(user.Size.height)
+
+// let user = {
+//   fisrtname : "Jhon",
+//   sayHi(){
+//     let arrow = () =>alert(this.fisrtname);
+//     arrow();
+//   }
+// };
+// user.sayHi();
+
+//constructor:
+function User(name){
+  this.name = name;
+  this.isAdmin = false;
+}
+let user = new User("Jack");
+alert(user.name);
+alert(user.isAdmin);     
+ </script>
+  </body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HCJ</title>
+        <style>
+          /*  table{
+  width:88%;
+  margin:40px auto;
+  background:rgb(124,154,167);
+} */
+ .flex-container{
+            display: flex;       
+/*            flex-wrap:wrap */
+   
+           width:90%;
+            margin: 40px auto;
+            background-color: rgb(124,154,167) ;
+   padding: 5px 5px 5px 15px;
+   align-items:center;
+ 
+          }
+
+table.list{
+  padding:5px 10px 5px 45px;
+  width:70%;
+}
+
+td{
+  border: 1px solid rgb(204,200,200);
+  padding:8px 15px;
+  }
+
+
+input[type = 'text'],input[type = "number"]{
+  width:100%;
+  padding:12px 20px;
+  margin:8px 0;
+  display:inline-block;
+  border:1px solid rgb(165,161,161);
+  border-radius:4px;
+}
+button[type = "submit"],button[type = "reset"]{
+  background:#eee;
+  padding:6px 12px;
+  margin:15px 0 10px;
+  display:inline-block;
+  border:none;
+  border-radius:30px;
+  font-size:1rem;
+  cursor:pointer;
+  outline:none;
+}
+ input[type = "add"]:hover{
+  background: #4b99d8;
+}
+button[type="update"]{
+    display: none;
+    border:none;
+  border-radius:30px;
+  font-size:1rem;
+  cursor:pointer;
+  outline:none;
+  /* background: #4b99d8; */
+}
+button{
+  background: #eee;
+  padding:6px 12px;
+  margin:15px 0 10px;
+  display:inline-block;
+  border:none;
+  border-radius:15px;
+  outline:none;
+  
+}
+
+button:hover{
+  background:#4b99d8;
+}
+        </style>
+    </head>
+        <body class = flex-container>
+            <!-- <table>
+       <tr>
+         <td> -->
+<div class = "flex-container">
+  <form autocomplete = "off" onsubmit = "onFormSubmit()" name = "formname">
+  <div id = "caps">
+   
+  <label for = "fname">First Name</label>
+  <input type = "text" name = "first name" id = 'fname' placeholder = "Enter Your First Name" required maxlength=32 pattern = '[a-zA-Z ""]*' class = "txt" onkeyup="manage()" >
+   </div>
+    <div id = "caps">
+    <label for ="lname">Last Name </label>
+  <input type = "text" name = "last name" id = 'lname' placeholder = "Enter Your Last Name" required maxlength=32 pattern = '[a-zA-Z ""]*' class = "txt" onkeyup="manage()">
+    
+  
+  </div>
+  <div>
+  <label for = "age"> Age</label>
+   <input type = "number" name = "age" id = 'age' placeholder = "Enter Your Age" required min = "5" max="100" class = "txt" onkeyup="manage()">
+ </div>
+  <div>
+   <button type = "button" class ="submit" value = "Submit" id = "btn" disabled>Submit</button>
+  <button type = "button" class = "update" value = "update" id = "btn">Update</button>
+  <button type = "button" class = "reset"  value = "reset" id = "btn" >Reset</button>
+                         
+ </div>
+  </form>
+  <td>
+                     <table class = "list" id = "storelist">
+                       <thead>
+                         <tr>
+                           <th>FirstName</th>
+   <th>Last Name</th>
+   <th>Age</th>
+        </tr>
+           </thead>
+            <tbody>
+                         
+        </tbody>
+      </table>
+      </td>
+ </div>
+ <!--          </td>
+       </tr>
+   </table> -->
+                  <!-- </td> -->
+                <!-- </tr> -->
+              <!-- </table> -->
+              <script>
+                	// let btnshow = document.querySelector("#button");
+// let input = document.querySelector('.Udetails');
+// // input.addEventListener('keyup',() =>{
+// //   if(input.value.length < 0) btnshow.disabled = true
+// //   else btnshow.disabled = false;
+// // });
+// btnshow.disabled =true;
+// input.addEventListener("change", stateHandle);
+// function stateHandle(){
+//    if (document.querySelector(".Udetails").value === "") {
+//         btnshow.disabled = true; //button remains disabled
+//     } else {
+//         btnshow.disabled = false; //button is enabled
+//     }
+// }
+// function manage(txt) {
+//         var bt = document.getElementById('button');
+//   var ele = document.getElementsByTagName('input');
+// //         if (txt.value != '') {
+// //             bt.disabled = false;
+// //         }
+// //         else {
+// //             bt.disabled = true;
+// //         }
+// //     }
+//  for (i = 0; i < ele.length; i++) {
+
+//             // Check the element type.
+//             if (ele[i].type == 'text'  && ele[i].value == '')  {
+//               if(ele[i].type == 'number' && ele[i].value == '')
+//                 bt.disabled = true;    // Disable the button.
+//                 return false;
+//             }
+//             else {
+//                 bt.disabled = false;   // Enable the button.
+//             }
+//         }
+//     }
+function manage(){
+  var f = document.forms["formname"].elements;
+  var sub = true;
+  for (var i = 0; i < f.length; i++) {
+    if (f[i].value.length == 0) sub = false;
+
+  }
+  if(sub) {
+    document.getElementById('btn').disabled = false;
+
+  }
+  else {
+    document.getElementById('btn').disabled = !sub;
+  }
+}
+
+// const bub = document.querySelector(".txt");
+// bub.addEventListener('click', () => {
+//   // var f = document.forms["formname"].elements;
+//   var sub = true;
+//   for (var i = 0; i < bub.length; i++) {
+//     if (bub[i].value.length == 0) sub = false;
+
+//   }
+//   if(sub) {
+//     document.getElementById('btn').disabled = false;
+
+//   }
+//   else {
+//     document.getElementById('btn').disabled = !sub;
+//   }
+// })
+const submit = document.querySelector(".submit");
+const updates = document.querySelector(".update");
+                var selectedRow = null;
+function onFormSubmit(){
+  event.preventDefault();
+  var fd = new FormData();
+  var fd = readFormData();
+  if(selectedRow === null){
+    insertNewRecord(fd);
+  }
+  else{
+    updateRecord(fd);
+  }
+  resetForm();
+}
+function readFormData(){
+  var fd = {};
+
+  fd["fname"] = document.getElementById("fname").value;
+  fd["lname"] = document.getElementById("lname").value;
+  fd["age"] = document.getElementById("age").value;
+  return fd;
+}
+function insertNewRecord(data){
+  var table = document.getElementById('storelist').getElementsByTagName('tbody')[0];
+  var newRow = table.insertRow(table.length);
+  var cell1 = newRow.insertCell(0);
+  cell1.innerHTML = data.fname;
+  var cell2 = newRow.insertCell(1);
+  cell2.innerHTML = data.lname;
+  var cell3 = newRow.insertCell(2);
+  cell3.innerHTML = data.age;
+  var cell4 = newRow.insertCell(3);
+  cell4.innerHTML = `<button onclick = "onEdit(this)">Edit</button> <button onclick = "onDelete(this)">Delete</button>`
+}
+function onEdit(td){
+    submit.style.display='none',
+    updates.style.display='inline-block',
+  selectedRow = td.parentElement.parentElement;
+  document.getElementById('fname').value = selectedRow.cells[0].innerHTML;
+  document.getElementById('lname').value = selectedRow.cells[1].innerHTML;
+  document.getElementById('age').value = selectedRow.cells[2].innerHTML;
+}
+function updateRecord(fd){
+   submit.style.display='inline-block',
+   updates.style.display='none',
+  selectedRow.cells[0].innerHTML = fd.fname;
+    selectedRow.cells[1].innerHTML = fd.lname;
+    selectedRow.cells[2].innerHTML = fd.age;
+}
+
+function onDelete(td){
+  if(confirm('Do you want to delete this row')){
+    row = td.parentElement.parentElement;
+    document.getElementById('storelist').deleteRow(row.rowIndex);
+    resetForm();
+  }
+ 
+}
+function resetForm(){
+  document.getElementById('fname').value = '';
+   document.getElementById('lname').value = '';
+   document.getElementById('age').value = '';
+   selectedRow = null;
+}
+              </script>
+        </body>
+   
+</html>
